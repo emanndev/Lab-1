@@ -23,38 +23,44 @@
     <main class="main-content">
       <section class="text-input-section">
         <form id="textForm">
-          <textarea name="text" id="textInput" rows="8" placeholder="Type your text here..."></textarea>
+          <textarea name="text" id="textInput" rows="8" placeholder="Type your text here...">Design is the silent ambassador of your brand. Simplicity is key to effective communication, creating clarity in every interaction. A great design transforms complex ideas into elegant solutions, making them easy to understand. It blends aesthetics and functionality seamlessly.</textarea>
           
           <div class="options">
-            <label class="option">
-              <input type="checkbox" name="excludeSpaces" id="excludeSpaces">
-              <span>Exclude Spaces</span>
-            </label>
+            <div class="option">
+              <div>
+                <input type="checkbox" name="excludeSpaces" id="excludeSpaces">
+                <span>Exclude Spaces</span> 
+              </div>
+               <div>
+                <input type="checkbox" name="charLimit" id="charLimit">
+                <span>Set Character Limit</span>
+               </div>
+             
+              </div>
+            <div>
+              <p class="reading-time" id="readingTime">Approx. reading time: <1 minute</p>
+      
+            </div>
             
-            <label class="option">
-              <input type="checkbox" name="charLimit" id="charLimit">
-              <span>Set Character Limit</span>
-            </label>
           </div>
           
-          <p class="reading-time" id="readingTime">Approx. reading time: 0 minutes</p>
-        </form>
+           </form>
       </section>
       
-      <section class="stats-section">
-        <div class="stats-grid">
-          <div class="stat-card" id="totalChars">
-            <h3>0</h3>
+      <section class="box-section">
+        <div class="box-grid">
+          <div class="box-card" id="totalChars">
+            <h3>278</h3>
             <p>Total Characters</p>
           </div>
           
-          <div class="stat-card" id="wordsCount">
-            <h3>0</h3>
+          <div class="box-card" id="wordsCount">
+            <h3>39</h3>
             <p>Word Count</p>
           </div>
           
-          <div class="stat-card" id="sentencesCount">
-            <h3>0</h3>
+          <div class="box-card" id="sentencesCount">
+            <h3>04</h3>
             <p>Sentence Count</p>
           </div>
         </div>
@@ -67,35 +73,38 @@
           <div class="density-item range-e">
             <span>E</span>
             <input type="range" min="0" max="100" value="0" disabled>
-            <span class="percentage">0 (0%)</span>
+            <span class="percentage">40 (16.06%)</span>
           </div>
           
           <div class="density-item range-i">
             <span>I</span>
             <input type="range" min="0" max="100" value="0" disabled>
-            <span class="percentage">0 (0%)</span>
+            <span class="percentage">29 (11.65%)</span>
           </div>
           
           <div class="density-item range-t">
             <span>T</span>
             <input type="range" min="0" max="100" value="0" disabled>
-            <span class="percentage">0 (0%)</span>
+            <span class="percentage">28 (11.24%)</span>
           </div>
           
           <div class="density-item range-o">
             <span>O</span>
             <input type="range" min="0" max="100" value="0" disabled>
-            <span class="percentage">0 (0%)</span>
+            <span class="percentage">22 (8.84%)</span>
           </div>
           
           <div class="density-item range-n">
             <span>N</span>
             <input type="range" min="0" max="100" value="0" disabled>
-            <span class="percentage">0 (0%)</span>
+            <span class="percentage">21 (8.43%)</span>
           </div>
         </div>
         
-        <a href="#" class="see-more">See more</a>
+        <a href="#" class="see-more">See more
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+        </a>
+        
       </section>
     </main>
   </div>
