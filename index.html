@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Character Counter</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <img class="logo" src="./assets/images/logo-dark-theme.svg" alt="Character Counter Logo">
+      <button class="theme-toggle"  aria-label="Toggle dark/light mode">
+        <img id="themeToggle" class="theme-icon" src="./assets/images/icon-sun.svg" alt="">
+      </button>
+    </nav>
+
+    <header class="header">
+      <h1 class="title">Analyze your text in real-time.</h1>
+    </header>
+ 
+    <main class="main-content">
+      <section class="text-input-section">
+        <form id="textForm">
+          <textarea name="text" id="textInput" rows="8" placeholder="Type your text here..."></textarea>
+          
+          <div class="options">
+            <label class="option">
+              <input type="checkbox" name="excludeSpaces" id="excludeSpaces">
+              <span>Exclude Spaces</span>
+            </label>
+            
+            <label class="option">
+              <input type="checkbox" name="charLimit" id="charLimit">
+              <span>Set Character Limit</span>
+            </label>
+          </div>
+          
+          <p class="reading-time" id="readingTime">Approx. reading time: 0 minutes</p>
+        </form>
+      </section>
+      
+      <section class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card" id="totalChars">
+            <h3>0</h3>
+            <p>Total Characters</p>
+          </div>
+          
+          <div class="stat-card" id="wordsCount">
+            <h3>0</h3>
+            <p>Word Count</p>
+          </div>
+          
+          <div class="stat-card" id="sentencesCount">
+            <h3>0</h3>
+            <p>Sentence Count</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="letter-density-section">
+        <h2>Letter Density</h2>
+        
+        <div class="density-grid">
+          <div class="density-item range-e">
+            <span>E</span>
+            <input type="range" min="0" max="100" value="0" disabled>
+            <span class="percentage">0 (0%)</span>
+          </div>
+          
+          <div class="density-item range-i">
+            <span>I</span>
+            <input type="range" min="0" max="100" value="0" disabled>
+            <span class="percentage">0 (0%)</span>
+          </div>
+          
+          <div class="density-item range-t">
+            <span>T</span>
+            <input type="range" min="0" max="100" value="0" disabled>
+            <span class="percentage">0 (0%)</span>
+          </div>
+          
+          <div class="density-item range-o">
+            <span>O</span>
+            <input type="range" min="0" max="100" value="0" disabled>
+            <span class="percentage">0 (0%)</span>
+          </div>
+          
+          <div class="density-item range-n">
+            <span>N</span>
+            <input type="range" min="0" max="100" value="0" disabled>
+            <span class="percentage">0 (0%)</span>
+          </div>
+        </div>
+        
+        <a href="#" class="see-more">See more</a>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
