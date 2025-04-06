@@ -2,6 +2,7 @@
     /* Dark Theme Defaults */
     --bg-color: #1a1a2e;
     --text-color: #ffffff;
+    --text-color-2: #E4E4EF;
     --primary-color: #c08fc9;
     --secondary-color: #bd8b16;
     --accent-color: #de6f5e;
@@ -47,6 +48,10 @@
     font-family: 'DM_Sans_Bold';
     src: url('./assets/fonts/DM_Sans/static/DMSans-Bold.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'DM_Sans_semiBold';
+    src: url('./assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf') format('truetype');
+  }
   
   body {
     font-family: 'DM_Sans', sans-serif;
@@ -62,7 +67,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 0 1rem;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -141,6 +146,8 @@
     min-height: 10rem;
     margin-bottom: 1rem;
     overflow: hidden;
+    resize: none;
+    cursor: pointer;
     transition: all 0.3s ease;
   }
   
@@ -165,23 +172,34 @@
    text-align: left;
     gap: 0.5rem;
     cursor: pointer;
+    vertical-align: top;
   }
   
-  .option input {
-    accent-color: var(--primary-color);
+  .option input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .spaces-text, .char-text{
+    font-family: "DM_Sans", sans-serif;
+    font-size: 1rem;
+    color: var(--text-color-2);
   }
   
   .reading-time {
     text-align: left;
-    font-size: 0.875rem;
-    color: var(--text-color);
-    opacity: 0.7;
+    font-family: "DM_Sans", sans-serif;
+    font-size: 1rem;
+    color: var(--text-color-2);
   }
   
   /* Boxes Section */
   .box-section {
     width: 100%;
-  
+    margin-bottom: 24px;
   }
   
   .box-grid {
@@ -192,15 +210,16 @@
   }
   
   .box-card {
-    padding: 1.5rem;
+    padding: 20px;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
+    gap: 8px;
     text-align: left;
     min-height: 7rem;
-    background-size: 40%;
+    background-size: 50%;
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right -37% center;
     transition: all 0.3s ease;
   }
   
@@ -211,16 +230,13 @@
 
   .box-card h3 {
     font-family: "DM_Sans_Bold", sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
+    font-size: 40px;
     color: var(--box-color);
   }
   
   .box-card p {
     font-family: "DM_Sans", sans-serif;
-    font-size: 0.875rem;
-    opacity: 0.8;
+    font-size: 20px;
     color: var(--box-color);
   }
   
@@ -245,17 +261,18 @@
   }
   
   .letter-density-section h2 {
-    font-size: 20px;
-    margin: 1rem 0;
+    font-family: 'DM_Sans_semiBold', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-color-2);
   }
   
   .density-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 12px;
     width: 100%;
-    font-family: "DM_Sans", sans-serif;
-    font-size: 1rem;
+ 
   }
   
   .density-item {
@@ -265,9 +282,19 @@
     gap: 0.75rem;
   }
   
-  .density-item span:first-child {
-    font-weight: bold;
-  }
+.letters{
+  font-family: "DM_Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--text-color-2);
+}
+
+.percentage {
+  font-family: "DM_Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--text-color-2);
+  min-width: 5rem;
+  text-align: right;
+}
   
   input[type="range"] {
     width: 100%;
@@ -284,17 +311,12 @@
     appearance: none;
     width: 0;
     height: 0;
+    background: transparent;
   }
-  
-  .percentage {
-    font-size: 0.75rem;
-    opacity: 0.7;
-    min-width: 5rem;
-    text-align: right;
-  }
-  
+
   .range-e input[type="range"] {
     background: linear-gradient(to right, var(--primary-color) 40%, var(--range-bg) 40%);
+
   }
   
   .range-i input[type="range"] {
@@ -330,6 +352,10 @@
     background-color: var(--primary-color);
     border-color: var(--primary-color);
   }
+
+  .option input[type="checkbox"]:checked:focus {
+    border-color: var(--text-color);
+  }
   .option input[type="checkbox"]:checked::after {
     content: '\2713';
     position: absolute;
@@ -343,10 +369,11 @@
 
   .see-more {
     display: inline-block;
-    margin-top: 1rem;
-    color: var(--text-color);
+    margin-top: 20px;
+    margin-bottom: 32px;
+    color: var(--text-color-2);
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 20px;
     transition: opacity 0.3s ease;
   }
   
@@ -356,7 +383,8 @@
   
 svg{
   position: relative;
-  top: 10px;
+  top: 6px;
+  left: -2px;
 }
 
 
@@ -386,20 +414,20 @@ svg{
 }
 
 /* Apply animations to elements */
-.stat-card {
+.box-card {
   opacity: 0;
   transform: scale(0.8);
 }
-.stat-card:nth-child(1) {
+.box-card:nth-child(1) {
   animation-delay: 0.1s;
 }
-.stat-card:nth-child(2) {
+.box-card:nth-child(2) {
   animation-delay: 0.2s;
 }
-.stat-card:nth-child(3) {
+.box-card:nth-child(3) {
   animation-delay: 0.3s;
 }
-.stat-card {
+.box-card {
   animation: cardEntrance 0.4s ease-out forwards;
 }
 
@@ -412,7 +440,7 @@ svg{
 /*Tablet and Desktop Responsiveness  */
 @media (min-width: 768px) {
   .container {
-    padding: 2rem;
+    padding: 0 2rem;
   }
   
   .title {
@@ -432,6 +460,7 @@ svg{
     align-items: center;
     gap: 1rem;
   }
+
   
   .reading-time {
     text-align: center;
@@ -445,11 +474,22 @@ svg{
     font-size: 24px;
 
   }
+  .see-more{
+      margin-bottom: 32px;
+  }
+}
+
+@media (min-width: 768px ) and (max-width: 884px){
+  .box-card {
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: right -60% center;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding: 2.5rem;
+    padding: 2rem 0 3rem ;
   }
   
   .title {
